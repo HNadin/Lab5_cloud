@@ -18,15 +18,14 @@ def generate_password():
     try:
         length = int(length)
     except:
-        length = 12  # default
+        length = 12
 
     chars = string.ascii_letters + string.digits
     password = "".join(random.choice(chars) for _ in range(length))
 
     return jsonify({
         "password": password,
-        "length": length,
-        "note": "Python Flask app deployed via Render"
+        "length": length
     })
 
 
